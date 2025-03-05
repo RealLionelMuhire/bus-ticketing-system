@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-api-gateway" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-booking-service" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-config-server" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-core-service" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-payment-service" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-service-registry" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bus-ticketing-user-service" />
+        <option name="gradleJvm" value="17" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
