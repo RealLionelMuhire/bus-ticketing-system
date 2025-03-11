@@ -1,10 +1,10 @@
-package com.javatodev.finance;
+package com.bus.ticketing;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class InternetBankingApiGatewayApplicationTests {
+class BusTicketingApiGatewayApplicationTests {
 
     @Test
     void contextLoads() {

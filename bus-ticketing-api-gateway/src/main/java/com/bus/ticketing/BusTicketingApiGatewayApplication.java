@@ -1,13 +1,12 @@
-package com.javatodev.finance;
+package com.bus.ticketing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InternetBankingApiGatewayApplication {
+public class BusTicketingApiGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(InternetBankingApiGatewayApplication.class, args);
+        SpringApplication.run(BusTicketingApiGatewayApplication.class, args);
     }
-
 }

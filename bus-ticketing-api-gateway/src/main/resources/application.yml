@@ -1,3 +1,30 @@
 spring:
   application:
-    name: bus-ticketing-user-service
+    name: bus-ticketing-api-gateway
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${JWT_SET_URI:http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/certs}
+  zipkin:
+    base-url: ${ZIPKIN_URI:http://localhost:9411}
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8081/eureka}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
