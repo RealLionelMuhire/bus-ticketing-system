@@ -41,7 +41,6 @@ public class SecurityConfiguration {
                     exchanges.pathMatchers("/ticket/actuator/**").permitAll();
                     exchanges.pathMatchers("/payment/actuator/**").permitAll();
                     exchanges.pathMatchers("/trip-updates/actuator/**").permitAll();
-                    exchanges.pathMatchers("/monitoring/actuator/**").permitAll();
 
                     // Require authentication for all other routes
                     exchanges.anyExchange().authenticated();

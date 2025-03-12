@@ -9,6 +9,66 @@ spring:
   zipkin:
     base-url: ${ZIPKIN_URI:http://localhost:9411}
 
+  # GATEWAY CONFIGURATIONS
+  cloud:
+    gateway:
+      routes:
+        # USER MANAGEMENT SERVICE
+        - id: bus-ticketing-user-service
+          uri: lb://bus-ticketing-user-service
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+
+        # FLEET MANAGEMENT SERVICE
+        - id: bus-ticketing-fleet-service
+          uri: lb://bus-ticketing-fleet-service
+          predicates:
+            - Path=/fleet/**
+          filters:
+            - StripPrefix=1
+
+        # ROUTE MANAGEMENT SERVICE
+        - id: bus-ticketing-route-service
+          uri: lb://bus-ticketing-route-service
+          predicates:
+            - Path=/route/**
+          filters:
+            - StripPrefix=1
+
+        # BOOKING SERVICE
+        - id: bus-ticketing-booking-service
+          uri: lb://bus-ticketing-booking-service
+          predicates:
+            - Path=/booking/**
+          filters:
+            - StripPrefix=1
+
+        # TICKET SERVICE
+        - id: bus-ticketing-ticket-service
+          uri: lb://bus-ticketing-ticket-service
+          predicates:
+            - Path=/ticket/**
+          filters:
+            - StripPrefix=1
+
+        # PAYMENT SERVICE
+        - id: bus-ticketing-payment-service
+          uri: lb://bus-ticketing-payment-service
+          predicates:
+            - Path=/payment/**
+          filters:
+            - StripPrefix=1
+
+        # LIVE TRIP UPDATES SERVICE
+        - id: bus-ticketing-trip-updates-service
+          uri: lb://bus-ticketing-trip-updates-service
+          predicates:
+            - Path=/trip-updates/**
+          filters:
+            - StripPrefix=1
+
 server:
   port: 8082
 
