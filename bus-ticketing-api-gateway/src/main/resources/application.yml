@@ -1,11 +1,31 @@
 spring:
   application:
     name: bus-ticketing-api-gateway
+
+  # KEYCLOAK CONFIGURATION
   security:
     oauth2:
+      client:
+        provider:
+          keycloak:
+            token-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/token
+            authorization-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/auth
+            user-name-attribute: preferred_username
+            user-info-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/userinfo
+            jwk-set-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/certs
+            user-info-authentication-method: header
+        registration:
+          bus-ticketing-client:
+            provider: keycloak
+            client-id: ${KEYCLOAK_CLIENT_ID:bus-ticketing-client}
+            client-secret: ${KEYCLOAK_CLIENT_SECRET:your-client-secret}
+            authorization-grant-type: authorization_code
+            redirect-uri: ${REDIRECT_URI:http://localhost:8082/login/oauth2/code/keycloak}
+            scope: openid
       resourceserver:
         jwt:
           jwk-set-uri: ${JWT_SET_URI:http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/certs}
+
   zipkin:
     base-url: ${ZIPKIN_URI:http://localhost:9411}
 
