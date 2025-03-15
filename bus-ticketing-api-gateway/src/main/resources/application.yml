@@ -8,26 +8,26 @@ spring:
       client:
         provider:
           keycloak:
-            token-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/token
-            authorization-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/token
+            authorization-uri: http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/auth
             user-name-attribute: preferred_username
-            user-info-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/userinfo
-            jwk-set-uri: ${KEYCLOAK_URI:http://localhost:8080/auth}/realms/${KEYCLOAK_REALM:bus-ticketing}/protocol/openid-connect/certs
+            user-info-uri: http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/certs
             user-info-authentication-method: header
         registration:
           bus-ticketing-client:
             provider: keycloak
-            client-id: ${KEYCLOAK_CLIENT_ID:bus-ticketing-client}
-            client-secret: ${KEYCLOAK_CLIENT_SECRET:your-client-secret}
+            client-id: bus-ticketing-client
+            client-secret: IP124tvUDtKZvnbiuIJx28MUjM2ylO8q
             authorization-grant-type: authorization_code
-            redirect-uri: ${REDIRECT_URI:http://localhost:8082/login/oauth2/code/keycloak}
+            redirect-uri: http://localhost:8082/login/oauth2/code/keycloak
             scope: openid
       resourceserver:
         jwt:
-          jwk-set-uri: ${JWT_SET_URI:http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/certs}
+          jwk-set-uri: http://localhost:8080/auth/realms/bus-ticketing/protocol/openid-connect/certs
 
   zipkin:
-    base-url: ${ZIPKIN_URI:http://localhost:9411}
+    base-url: http://localhost:9411
 
   # GATEWAY CONFIGURATIONS
   cloud:
@@ -95,7 +95,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URI:http://localhost:8081/eureka}
+      defaultZone: http://localhost:8081/eureka
 
 management:
   tracing:
