@@ -10,7 +10,7 @@ gitProperties {
     dateFormatTimeZone = "IST"
 }
 
-group = 'com.javatodev.finance'
+group = 'com.bus.ticketing'
 version = '0.0.1-SNAPSHOT'
 
 java {
@@ -36,7 +36,6 @@ dependencies {
     implementation 'io.zipkin.reporter2:zipkin-reporter-brave'
     implementation 'io.github.openfeign:feign-micrometer'
 
-
     //SPRING CLOUD CONFIG
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
@@ -50,8 +49,6 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.h2database:h2:2.2.224'
-
-
 }
 
 dependencyManagement {
