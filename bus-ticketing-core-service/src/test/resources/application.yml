@@ -1,8 +1,8 @@
 spring:
   application:
-    name: core-banking-service
+    name: bus-ticketing-core-service
   datasource:
-    url: jdbc:h2:mem:banking_core_service
+    url: jdbc:h2:mem:bus_ticketing_core_service
     username: root
     password: password
     driver-class-name: org.h2.Driver
